@@ -1,6 +1,6 @@
 {
 	"name": "Generate Translated Pages",
-	"id": "850282945911078543",
+	"id": "850387744755944119",
 	"api": "1.0.0",
 	"main": "dist/main.js",
 	"ui": "dist/ui.html"
