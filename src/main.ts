@@ -1,6 +1,20 @@
+/**
+ * Internal dependencies.
+ */
+import actions from './actions';
+
+/**
+ * Render UI.
+ */
 figma.showUI( __html__ );
 
-figma.ui.onmessage = ( msg ) => {
-	// Handle messages
-	figma.closePlugin();
+/**
+ * Bind message handler.
+ */
+figma.ui.onmessage = ( message ) => {
+	const { type } = message;
+
+	if ( type in actions ) {
+		actions[ type ]( message );
+	}
 };

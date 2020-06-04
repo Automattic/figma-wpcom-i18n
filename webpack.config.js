@@ -15,7 +15,12 @@ module.exports = ( _env, { mode } ) => ( {
 			{ test: /\.css$/, loader: [ { loader: 'style-loader' }, { loader: 'css-loader' } ] },
 		],
 	},
-	resolve: { extensions: [ '.tsx', '.ts', '.jsx', '.js' ] },
+	resolve: {
+		extensions: [ '.tsx', '.ts', '.jsx', '.js' ],
+		alias: {
+			'~': path.resolve( __dirname, 'src' ),
+		},
+	},
 	output: {
 		filename: '[name].js',
 		path: path.resolve( __dirname, 'dist' ),

@@ -1,9 +1,11 @@
+/* Base */
 body {
 	font: 12px sans-serif;
 	text-align: center;
 	padding: 20px;
 }
 
+/* Buttons */
 button {
 	border-radius: 5px;
 	background: #fff;
