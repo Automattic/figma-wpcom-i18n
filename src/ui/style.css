@@ -1,0 +1,26 @@
+body {
+	font: 12px sans-serif;
+	text-align: center;
+	padding: 20px;
+}
+
+button {
+	border-radius: 5px;
+	background: #fff;
+	color: #000;
+	border: none;
+	padding: 8px 16px;
+	margin: 0 5px;
+	box-shadow: inset 0 0 0 1px #000;
+	outline: none;
+}
+
+button.is-primary {
+	background: #18a0fb;
+	color: #fff;
+	box-shadow: none;
+}
+
+button.is-primary:focus {
+	box-shadow: inset 0 0 0 2px rgba( 0, 0, 0, 0.3 );
+}
