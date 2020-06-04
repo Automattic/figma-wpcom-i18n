@@ -20,10 +20,13 @@ export default async () => {
 	for ( let locale of getLocales() ) {
 		try {
 			const translations = await getTranslations( pageStrings, locale );
-			const translationsMap = Object.values( translations ).reduce( ( map, item ) => {
+			const translationsMap = Object.keys( translations ).reduce( ( map, key ) => {
+				const item = translations[ key ];
+
 				if ( item?.translations?.length ) {
 					map[ item.original.singular ] = item.translations[ 0 ].translation_0;
 				}
+
 				return map;
 			}, {} );
 
