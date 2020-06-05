@@ -3,7 +3,7 @@
  */
 import { makeRequest } from '~/utils';
 
-const API_ENDPOINT = 'https://translate.wordpress.com/api/translations/-query-by-originals?allow';
+const API_ENDPOINT = 'https://translate.wordpress.com/api/translations/-query-by-originals?allow_origin_any';
 const PROJECT = 'wpcom';
 const TRANSLATION_SET_SLUG = 'default';
 
@@ -14,7 +14,6 @@ export const getTranslations = ( strings, locale ) => {
 
 	return makeRequest( API_ENDPOINT, {
 		method: 'POST',
-		mode: 'cors',
 		body: {
 			project: PROJECT,
 			translation_set_slug: TRANSLATION_SET_SLUG,
