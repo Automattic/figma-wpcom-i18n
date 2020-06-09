@@ -9,13 +9,21 @@ import {
 	replaceTextNodeCharacters,
 } from '~/utils';
 
+const updateRootUI = ( state ) => {
+	figma.ui.postMessage( { type: 'ui:root', state } );
+};
+
 export default async () => {
 	const targetPage = figma.currentPage;
 	const pageStrings = new Set();
 
+	updateRootUI( { status: 'processing' } );
+
 	getTextNodesDeep( figma.currentPage.children ).forEach( ( node ) => {
 		pageStrings.add( node.characters );
 	} );
+
+	let processedCount = 0;
 
 	for ( let locale of getLocales() ) {
 		try {
@@ -49,9 +57,14 @@ export default async () => {
 					await replaceTextNodeCharacters( node, translationsMap[ nodeString ] );
 				}
 			}
+
+			processedCount++;
+			updateRootUI( { processedCount } );
 		} catch ( error ) {
 			// Handle page translation failures
 			console.log( 'error', error );
 		}
 	}
+
+	updateRootUI( { status: 'completed' } );
 };
