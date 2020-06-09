@@ -1,15 +1,15 @@
 /**
- * Internal dependencies.
+ * Internal dependencies
  */
 import actions from './actions';
 
 /**
- * Render UI.
+ * Render UI
  */
 figma.showUI( __html__ );
 
 /**
- * Bind message handler.
+ * Bind message handler
  */
 figma.ui.onmessage = ( message ) => {
 	const { type } = message;

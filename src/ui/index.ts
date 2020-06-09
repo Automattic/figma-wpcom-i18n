@@ -1,4 +1,8 @@
 /**
+ * External dependencies
+ */
+
+/**
  * Internal dependencies
  */
 import './style.css';
