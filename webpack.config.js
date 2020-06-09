@@ -7,7 +7,7 @@ module.exports = ( _env, { mode } ) => ( {
 	devtool: mode === 'production' ? false : 'inline-source-map',
 	entry: {
 		main: './src/main.ts',
-		ui: './src/ui/index.ts',
+		ui: './src/ui/index.tsx',
 	},
 	module: {
 		rules: [
