@@ -7,6 +7,7 @@ import {
 	getTranslatedPageName,
 	getTranslations,
 	replaceTextNodeCharacters,
+	updateTextStyleForLocale,
 } from '~/utils';
 
 const updateRootUI = ( state ) => {
@@ -55,6 +56,7 @@ export default async () => {
 
 				if ( nodeString in translationsMap ) {
 					await replaceTextNodeCharacters( node, translationsMap[ nodeString ] );
+					updateTextStyleForLocale( node, locale );
 				}
 			}
 
