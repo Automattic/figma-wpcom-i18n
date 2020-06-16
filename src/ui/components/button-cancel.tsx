@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import React from 'react';
+import * as React from 'react';
 
 const ButtonCancel = ( props ) => {
 	const handleClick = () => {
