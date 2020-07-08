@@ -6,6 +6,7 @@ import {
 	getTextNodesDeep,
 	getTranslatedPageName,
 	getTranslations,
+	reorderRTL,
 	replaceTextNodeCharacters,
 	updateTextStyleForLocale,
 } from '~/utils';
@@ -55,7 +56,8 @@ export default async () => {
 				const nodeString = node.characters;
 
 				if ( nodeString in translationsMap ) {
-					await replaceTextNodeCharacters( node, translationsMap[ nodeString ] );
+					const translation = reorderRTL( translationsMap[ nodeString ], locale );
+					await replaceTextNodeCharacters( node, translation );
 					updateTextStyleForLocale( node, locale );
 				}
 			}

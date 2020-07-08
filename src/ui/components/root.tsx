@@ -7,9 +7,9 @@ import * as React from 'react';
  * Internal dependencies
  */
 import { getLocales } from '~/utils';
-import NetworkRequests from '~/ui/components/network-requests.tsx';
-import ButtonGenerate from '~/ui/components/button-generate.tsx';
-import ButtonCancel from '~/ui/components/button-cancel.tsx';
+import NetworkRequests from '~/ui/components/network-requests';
+import ButtonGenerate from '~/ui/components/button-generate';
+import ButtonCancel from '~/ui/components/button-cancel';
 
 const Root = () => {
 	const [ state, setState ] = React.useState( {

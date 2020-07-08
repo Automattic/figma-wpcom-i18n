@@ -2,6 +2,6 @@
 	"compilerOptions": {
 		"jsx": "react",
 		"target": "es6",
-		"typeRoots": [ "node_modules/@types", "node_modules/@figma" ]
+		"typeRoots": [ "./types", "node_modules/@types", "node_modules/@figma" ]
 	}
 }
