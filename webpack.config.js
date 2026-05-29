@@ -1,4 +1,4 @@
-const HtmlWebpackInlineSourcePlugin = require( 'html-webpack-inline-source-plugin' );
+const HtmlInlineScriptPlugin = require( 'html-inline-script-webpack-plugin' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const path = require( 'path' );
 
@@ -12,7 +12,7 @@ module.exports = ( _env, { mode } ) => ( {
 	module: {
 		rules: [
 			{ test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
-			{ test: /\.css$/, loader: [ { loader: 'style-loader' }, { loader: 'css-loader' } ] },
+			{ test: /\.css$/, use: [ { loader: 'style-loader' }, { loader: 'css-loader' } ] },
 		],
 	},
 	resolve: {
@@ -29,9 +29,8 @@ module.exports = ( _env, { mode } ) => ( {
 		new HtmlWebpackPlugin( {
 			template: './src/ui/index.html',
 			filename: 'ui.html',
-			inlineSource: '.(js)$',
 			chunks: [ 'ui' ],
 		} ),
-		new HtmlWebpackInlineSourcePlugin(),
+		new HtmlInlineScriptPlugin(),
 	],
 } );

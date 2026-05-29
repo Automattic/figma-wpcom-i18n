@@ -1,6 +1,11 @@
 {
 	"compilerOptions": {
 		"jsx": "react",
+		"baseUrl": ".",
+		"moduleResolution": "node",
+		"paths": {
+			"~/*": [ "src/*" ]
+		},
 		"target": "es6",
 		"typeRoots": [ "./types", "node_modules/@types", "node_modules/@figma" ]
 	}
